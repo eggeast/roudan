@@ -1,0 +1,440 @@
+*{
+    margin: 0;
+    padding: 0;
+    Box-sizing: border-box;
+    color: white;
+    list-style-type: none;
+}
+
+body{
+    background: #111327;
+}
+
+.banner{
+    width: 100%;
+    height: 95vh; /*控制屏幕高度是否有滚动条 100为满屏*/
+    background: #0B0A40  url(../img/bg.avif) no-repeat ;
+    background-size: cover;
+}
+
+.slogan{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slogan h1{
+    
+    font-size: 50px;
+    color: #FF6D34;
+    text-align: center;
+    margin-top: -100px;
+}
+
+.slogan h3{
+    font-size: 24px;
+    text-align: center;
+    margin-top: -20px;
+    font-weight: 100;
+}
+
+.slogan a{
+    width: 260px;
+    display: block;
+    margin:  auto;
+    background: #FF6D34;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.3);
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 5px;
+    transition: 0.2s;
+    text-align: center;
+    padding: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor:pointer;
+    margin-top: 30px;
+}
+
+.slogan a:hover{
+    width: 200px;
+    background: #FFB134;
+    cursor:pointer;
+    border-radius: 50px;
+}
+
+.menu{
+    width: 60%;
+    height: 80px;
+    background: #080A0F;
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 40px;
+    left: 50%;  
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    opacity: 0.9;
+}
+
+.logo{
+    width: 216px;
+    height: 100%;
+    padding: 20px;
+    background:url(../img/roudan_logo.png) no-repeat ;
+    background-size: 60%; 
+    background-position: center ;
+}
+
+.menu-list{
+    padding-right: 20px;
+}
+
+.menu-list ul li{
+    list-style: none;
+    display: inline-block;
+    padding-right: 40px;
+    font-size: 16px;
+}
+
+.active {
+    color: #FF6D34;
+}
+
+.intro {
+    display: flex;
+    width: 60%;
+    height: 260px;
+    margin: auto;
+    margin-top: -15vh;
+    margin-bottom: 2%;
+    gap: 2rem
+}
+
+
+.intro-con{
+    display: block;
+    width: 60%;
+    height: 100%;
+    background-color: #1E2245;
+    border-radius: 30px;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    
+}
+
+.intro-con p{
+    font-size: 16px;
+    font-weight: 100;
+    margin: 30px 40px 0 40px;
+}
+
+.intro-con h2{
+    font-size: 30px;
+    font-family: Poppins, sans-serif;
+    
+}
+
+.headpic img {
+    height: 120px;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.3);
+    border-radius: 50%;
+    margin-top: -10vh;
+}
+
+/* 产品介绍板块 */
+.product {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.product h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 30px;
+}
+
+.product-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+.product-card{
+    position: relative;
+    width: 60%;
+    height: 350px;
+    margin: 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    overflow: hidden;
+}
+
+.product-card::before{
+    content: "";
+    width: 100%;
+    height: 110%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    /* 过渡效果: css属性名 时长 贝塞尔曲线 */
+    transition: transform 1s cubic-bezier(0.19,1,0.22,1);
+}
+
+/* 分别设置图片 */
+.product-card:nth-child(1)::before{
+    background-image: url(/img/product-1.jpg);
+}
+.product-card:nth-child(2)::before{
+    background-image: url(/img/product-2.jpg);
+}
+.product-card:nth-child(3)::before{
+    background-image: url(/img/product-3.jpg);
+}
+
+
+/* 遮罩 */
+.product-card::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.9) 80%,
+    rgba(0,0,0,1) 100%);
+    /* 绝对定位 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+    /* 过渡效果 */
+    transition: transform 1.4s cubic-bezier(0.19,1,0.22,1);
+}
+.product-card .product-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 16px 8px;
+    transform: translateY(76%);
+    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1);
+}
+.product-card h3{
+    font-size: 24px;
+    font-weight: 900;
+}
+.product-card p{
+    font-size: 15px;
+    width: 80%;
+    font-weight: 100;
+    margin-top: 10px;
+    /* 文本两端对齐 */
+    text-align: justify;
+}
+
+.product-card a{
+    text-decoration: none;
+    cursor: pointer;
+    width: 60%;
+    height: 50px;
+    border-radius: 5px;
+    background-color:#FF6D34;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+
+.product-card .product-content *:not(h2){
+    /* .content下，除了h2，其他元素隐藏并下移20px */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1),opacity 0.7s cubic-bezier(0.19,1,0.22,1);
+}
+
+.product-card:hover::before{
+    transform: translateY(-5%);
+}
+.product-card:hover::after{
+    transform: translateY(-50%);
+}
+.product-card:hover .product-content{
+    transform: translateY(0);
+}
+.product-card:hover .product-content *:not(h2){
+    opacity: 1;
+    transform: translateY(0);
+    /* 过渡效果延迟 */
+    transition-delay: 0.1s;
+}
+
+/* 案例板块 */
+.case {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10%;
+}
+
+
+.case h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 30px;
+}
+
+.case-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+.case-card{
+    position: relative;
+    width: 60%;
+    height: 350px;
+    margin: 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    overflow: hidden;
+}
+
+.case-card::before{
+    content: "";
+    width: 100%;
+    height: 110%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    /* 过渡效果: css属性名 时长 贝塞尔曲线 */
+    transition: transform 1s cubic-bezier(0.19,1,0.22,1);
+}
+
+/* 分别设置图片 */
+.case-card:nth-child(1)::before{
+    background-image: url(/img/case-1.jpg);
+}
+.case-card:nth-child(2)::before{
+    background-image: url(/img/case-2.jpg);
+}
+.case-card:nth-child(3)::before{
+    background-image: url(/img/case-3.jpg);
+}
+
+
+/* 遮罩 */
+.case-card::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.9) 80%,
+    rgba(0,0,0,1) 100%);
+    /* 绝对定位 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+    /* 过渡效果 */
+    transition: transform 1.4s cubic-bezier(0.19,1,0.22,1);
+}
+.case-card .case-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 16px 8px;
+    transform: translateY(76%);
+    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1);
+}
+.case-card h3{
+    font-size: 24px;
+    font-weight: 900;
+}
+.case-card p{
+    font-size: 15px;
+    width: 80%;
+    font-weight: 100;
+    margin-top: 10px;
+    /* 文本两端对齐 */
+    text-align: justify;
+}
+
+.case-card a{
+    text-decoration: none;
+    cursor: pointer;
+    width: 60%;
+    height: 50px;
+    border-radius: 5px;
+    background-color:#FF6D34;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+
+.case-card .case-content *:not(h2){
+    /* .content下，除了h2，其他元素隐藏并下移20px */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1),opacity 0.7s cubic-bezier(0.19,1,0.22,1);
+}
+
+.case-card:hover::before{
+    transform: translateY(-5%);
+}
+.case-card:hover::after{
+    transform: translateY(-50%);
+}
+.case-card:hover .case-content{
+    transform: translateY(0);
+}
+.case-card:hover .case-content *:not(h2){
+    opacity: 1;
+    transform: translateY(0);
+    /* 过渡效果延迟 */
+    transition-delay: 0.1s;
+}
